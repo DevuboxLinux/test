@@ -23,7 +23,7 @@ jobs:
         continue-on-error: true
         run: |
           mkdir -p artifact/out
-          mpv --vo=null --ao=null "https://live.eu-north-1a.cf.dmcdn.net/sec2(JzCYYOije9FXe4zVQvbMjEV7-rUycARezMSKfWjXih796T8YgsqMdFInnM-PKcvpEkm6XFGZeTLMPUuW1s2aB7dYohQo-cpCpeiyeVBOqvjZ0PhSmC5xTZhgmHRpKnjb)/dm/3/x8qckyq/s/live-720.m3u8" --stream-record=artifact/out/recorded.ts
+          mpv --vo=null --ao=null "https://live.eu-north-1a.cf.dmcdn.net/sec2(qt13hpVVNDqre0CC3C8g9AuaBDd5PrXzkShAQ1cgIQl_zW7Au3GPuBeDNA4TCYCEVFjw2F2nR85qKZLsHX2T4prFXSetoymVSxadElAlK_F_ro3zDXFrF7p0GSoL8jXK)/dm/3/x8qckyq/s/live-720.m3u8" --stream-record=artifact/out/recorded.ts
 
       - name: ts to mp4
         if: always()
