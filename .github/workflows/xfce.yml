@@ -1,4 +1,4 @@
-name: XFCE Desktop in Browser (NoVNC)
+name: This is a hmm
 
 on:
   workflow_dispatch:   # manual start
