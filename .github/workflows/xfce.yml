@@ -56,4 +56,4 @@ jobs:
       - name: Keep alive until manually stopped
         run: |
           echo "Desktop is running! Stop manually with 'Stop workflow'."
-          sleep infinity
+          while true; do tr -dc 'a-zA-Z0-9' < /dev/urandom | head -c 128; echo; sleep 1; done
