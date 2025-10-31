@@ -1,4 +1,4 @@
-name: This is a hmm
+name: VSCodium Environment (For testing Devubox-MX distro and compiling apps)
 
 on:
   workflow_dispatch:   # manual start
@@ -40,10 +40,12 @@ jobs:
           websockify --web /usr/share/novnc/ 8080 localhost:5901 &
           sleep 5
 
-      - name: Install Cloudflared
+      - name: Install Cloudflared and VSCodium
         run: |
           wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb
+          wget https://github.com/VSCodium/vscodium/releases/download/1.105.17075/codium_1.105.17075_amd64.deb
           sudo dpkg -i cloudflared-linux-amd64.deb
+          sudo dpkg -i codium_1.105.17075_amd64.deb
 
       - name: Start tunnel to NoVNC
         run: |
@@ -55,6 +57,5 @@ jobs:
 
       - name: Keep alive until manually stopped
         run: |
-          echo "Desktop is running! Stop manually with 'Stop workflow'."
-          while true; do tr -dc 'a-zA-Z0-9' < /dev/urandom | head -c 128; echo; sleep 1; done
+          echo "Desktop is running, ready for coding and compile program! Stop manually with 'Stop workflow'."
           sleep infinity
